@@ -10,11 +10,11 @@ django-admin startproject ProjectName
 ex:
     
     1) django-admin startproject mysite
-    2) django-admin startproject polls
+    2) python manage.py startapp polls
 
 #Creating a DataBase(Migrate)
 
-    python manage.py makemigrate polls
+    python manage.py makemigrations polls
     python manage.py migrate
 
 under the migrations folder it will create the histroy same as git
@@ -38,7 +38,7 @@ Steps:
 3) from polls.models import Question, Choice
 4) Question.objects.all()
 5) from django.utils import timezone
-6) q = Question(question_text = "What is your name", pub_date = timezone.now())
+6) q = Question(question_text="What is your name", pub_date=timezone.now())
 7) q.save()
 
 ###Creating a SuperUser
@@ -52,6 +52,10 @@ Open this in a browser: http://127.0.0.1:8000/admin
 
 ###Making changes in admin
 Open polls file, open admin.py file and modify the changes accordingly
+      
+      from .models import Question,Choice
+      admin.site.register(Question)
+      admin.site.register(Choice)
 
 ### Playing around the URLS
 In the mainproject folder i.e mysite urls.py add the path of the polls folder urls.py file
