@@ -6,11 +6,12 @@ create a virtualenv, activate
 
 ### Creating a Project
 django-admin startproject ProjectName
-
+under the project we can create 'n' number of apps
 ex:
     
     1) django-admin startproject mysite
-    2) python manage.py startapp polls
+    2) cd mysite
+    3) python manage.py startapp polls
 
 #Creating a DataBase(Migrate)
 
